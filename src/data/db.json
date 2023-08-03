@@ -28,12 +28,7 @@
     {
       "id": 6,
       "title": "write a report",
-      "isFav": false
-    },
-    {
-      "title": "teste",
-      "isFav": false,
-      "id": 133
+      "isFav": true
     }
   ]
 }
