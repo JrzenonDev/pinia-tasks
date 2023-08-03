@@ -1,10 +1,17 @@
 <template>
   <main>
+    <!-- heading -->
     <header>
       <img src="./assets/pinia-logo.svg" alt="Pinia logo" />
-      <h1>Pinia Tasks {{ taskStore.name }}</h1>
+      <h1>Pinia Tasks</h1>
     </header>
 
+    <!-- new task form -->
+    <div class="new-task-form">
+      <TaskForm />
+    </div>
+
+    <!-- filter -->
     <nav class="filter">
       <button @click="filter = 'all'">All tasks</button>
       <button @click="filter = 'favs'">Fav tasks</button>
@@ -29,10 +36,11 @@
 <script>
 import { useTasksStore } from "./store/TasksStore";
 import TaskDetails from "./components/TaskDetails.vue";
+import TaskForm from "./components/TaskForm.vue";
 import { ref } from "vue";
 
 export default {
-  components: { TaskDetails },
+  components: { TaskDetails, TaskForm },
   setup() {
     const taskStore = useTasksStore();
     const filter = ref("all");
